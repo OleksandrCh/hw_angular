@@ -1,0 +1,22 @@
+<div>
+  <ul *ngFor="let user of users" style="border: 1px solid #000000">
+    <div>
+      id- {{user.id}}
+      name- {{user.name}}
+      username- {{user.username}}
+      website- {{user.website}}
+    </div>
+    <hr>
+    <li *ngFor="let post of user.posts">
+      post- {{post.body}}
+      <ul>
+        <li *ngFor="let comment of post.comments">
+          comment- {{comment.body}}
+        </li>
+      </ul>
+      <hr>
+    </li>
+
+  </ul>
+</div>
+<hr>
