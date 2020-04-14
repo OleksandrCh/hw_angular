@@ -10,21 +10,28 @@ import {RouterModule} from '@angular/router';
 import {UsersResolveService} from './service/users-resolve.service';
 import {PostsResolveService} from './service/posts-resolve.service';
 import {CommentsResolveService} from './service/comments-resolve.service';
+import { AllUsersComponent } from './components/all-users/all-users.component';
+import { AllPostsComponent } from './components/all-posts/all-posts.component';
+import {AllCommentsComponent} from './components/all-comments/all-comments.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
     PostsComponent,
-    CommentsComponent
+    CommentsComponent,
+    AllUsersComponent,
+    AllPostsComponent,
+    AllCommentsComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot([
-      {path: 'users', component: UsersComponent, resolve: {allUsers: UsersResolveService}},
-      {path: 'posts', component: PostsComponent, resolve: {allPosts: PostsResolveService}},
-      {path: 'users', component: CommentsComponent, resolve: {allComments: CommentsResolveService}},
+      {path: '', component: AppComponent},
+      {path: 'users', component: AllUsersComponent, resolve: {allUsers: UsersResolveService}},
+      {path: 'posts', component: AllPostsComponent, resolve: {allPosts: PostsResolveService}},
+      {path: 'comments', component: AllCommentsComponent, resolve: {allComments: CommentsResolveService}},
     ])
   ],
   providers: [],
@@ -32,3 +39,4 @@ import {CommentsResolveService} from './service/comments-resolve.service';
 })
 export class AppModule {
 }
+
