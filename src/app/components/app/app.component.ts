@@ -1,8 +1,8 @@
 import {Component} from '@angular/core';
-import {UsersModel} from '../models/UsersModel';
-import {UsersService} from '../service/users.service';
-import {PostsService} from '../service/posts.service';
-import {CommentsService} from '../service/comments.service';
+import {UsersModel} from '../../models/UsersModel';
+import {UsersService} from '../../service/users.service';
+import {PostsService} from '../../service/posts.service';
+import {CommentsService} from '../../service/comments.service';
 
 @Component({
   selector: 'app-root',
