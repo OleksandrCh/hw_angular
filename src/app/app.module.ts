@@ -13,6 +13,7 @@ import {CommentsResolveService} from './service/comments-resolve.service';
 import { AllUsersComponent } from './components/all-users/all-users.component';
 import { AllPostsComponent } from './components/all-posts/all-posts.component';
 import {AllCommentsComponent} from './components/all-comments/all-comments.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -23,12 +24,13 @@ import {AllCommentsComponent} from './components/all-comments/all-comments.compo
     AllUsersComponent,
     AllPostsComponent,
     AllCommentsComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot([
-      {path: '', component: AppComponent},
+      {path: '', component: HomeComponent},
       {path: 'users', component: AllUsersComponent, resolve: {allUsers: UsersResolveService}},
       {path: 'posts', component: AllPostsComponent, resolve: {allPosts: PostsResolveService}},
       {path: 'comments', component: AllCommentsComponent, resolve: {allComments: CommentsResolveService}},
