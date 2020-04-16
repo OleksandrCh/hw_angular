@@ -1,5 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {UsersModel} from '../../models/UsersModel';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-users',
@@ -10,8 +11,21 @@ export class UsersComponent {
   @Input()
   user: UsersModel;
 
-  constructor() {
+  @Output()
+  forwardUserData = new EventEmitter();
+
+  constructor(private router: Router,
+              private activatedRoute: ActivatedRoute) {
   }
 
+  navigateUser(user: UsersModel) {
+    this.forwardUserData.emit(user);
+
+    this.router.navigate([user.id, 'posts'], {
+      state: {user},
+      queryParams: {idOfUser: user.id},
+      relativeTo: this.activatedRoute,
+    });
+  }
 
 }

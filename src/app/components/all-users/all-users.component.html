@@ -1,1 +1,13 @@
-<app-users  *ngFor="let user of users" [user]="user"></app-users>
+<div class="layout">
+  <div class="userActiveContainer">
+    <div>{{userOnClick?.id}}</div>
+    <div>{{userOnClick?.name}}</div>
+  </div>
+
+
+  <app-users *ngFor="let user of users" [user]="user" (forwardUserData)="catchUserData($event)"></app-users>
+
+
+</div>
+
+<router-outlet></router-outlet>

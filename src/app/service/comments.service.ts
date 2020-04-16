@@ -15,5 +15,8 @@ export class CommentsService {
   getComments(): Observable<CommentsModel[]> {
     return this.http.get<CommentsModel[]>('https://jsonplaceholder.typicode.com/comments');
   }
+  getCommentsByPostId(postId): Observable<CommentsModel[]> {
+    return this.http.get<CommentsModel[]>(`https://jsonplaceholder.typicode.com/comments?postId=${postId}`);
+  }
 
 }

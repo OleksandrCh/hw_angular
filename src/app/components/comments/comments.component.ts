@@ -6,9 +6,10 @@ import {CommentsModel} from '../../models/CommentsModel';
   templateUrl: './comments.component.html',
   styleUrls: ['./comments.component.css']
 })
-export class CommentsComponent{
+export class CommentsComponent {
   @Input()
   comment: CommentsModel;
+
   constructor() {
   }
 

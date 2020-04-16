@@ -9,6 +9,7 @@ import {UsersModel} from '../../models/UsersModel';
 })
 export class AllUsersComponent implements OnInit {
   users: UsersModel[];
+  userOnClick: any;
 
   constructor(private activatedRoute: ActivatedRoute) {
     this.users = this.activatedRoute.snapshot.data.allUsers;
@@ -17,4 +18,7 @@ export class AllUsersComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  catchUserData(user: any) {
+    this.userOnClick = user;
+  }
 }
