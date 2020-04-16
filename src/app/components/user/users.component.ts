@@ -8,7 +8,7 @@ import {UsersModel} from '../../models/UsersModel';
 })
 export class UsersComponent {
   @Input()
-  users: UsersModel[];
+  user: UsersModel;
 
   constructor() {
   }
