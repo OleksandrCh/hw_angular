@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {PostsModel} from '../../models/PostsModel';
+import {PostsService} from '../../service/posts.service';
 
 @Component({
   selector: 'app-all-posts',
@@ -10,7 +11,9 @@ import {PostsModel} from '../../models/PostsModel';
 export class AllPostsComponent implements OnInit {
   posts: PostsModel[];
 
-  constructor(private activatedRoute: ActivatedRoute) {
+  constructor(private activatedRoute: ActivatedRoute,
+              private  postsService: PostsService,
+              private router: Router) {
     this.posts = this.activatedRoute.snapshot.data.allPosts;
   }
 
